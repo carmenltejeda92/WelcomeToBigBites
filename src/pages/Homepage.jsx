@@ -1,35 +1,40 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react';
 
 const Homepage = () => {
-    const [searchAuthor, setSearchAuthor] = useState(``);
+    const [searchAuthor, setSearchAuthor] = useState('');
     const [data, setData] = useState([]);
 
-    useEffect(() => {
-        if (searchAuthor.trim() === '') { 
-            return;
-        }
+    const handleSearch = (e) => {
+        e.preventDefault(); 
 
-
-        fetch(`http://openlibrary.org/search.json?author=${searchAuthor}`)
+           fetch(`http://openlibrary.org/search/authors.json?q=${searchAuthor}`)
             .then((response) => response.json())
-            .then((result) => setData(result.docs))
-                console.log(data)
-            .catch((error) => console.error('sorry, problem getting data', error));
-    });
+            .then((result) => {
+                setData(result.docs);
+                console.log(result.docs);
+            })
+            .catch((error) => console.error('Sorry, problem getting data', error));
+    };
 
-  return (
-    <div>
-          <input
-              type = "text"
-              value = {searchAuthor}
-              onChange = {(e) => setSearchAuthor(e.target.value)}
-              placeholder = "Author Name"
-          />
-          {data.map((results) => (
-              <div key={results.key}>{results.title}</div>
-          ))}
-    </div>
-  )
-}
+    return (
+        <div>
+            <form onSubmit={handleSearch}>
+                <input
+                    type="text"
+                    value={searchAuthor}
+                    onChange={(e) => setSearchAuthor(e.target.value)}
+                    placeholder="Author Name"
+                />
+                <button type="submit">Search</button>
+            </form>
+            
+            {data.map((result) => (
+                <div key={result.key}>
+                    <div>Author Name: {result.name}</div>
+                </div>
+            ))}
+        </div>
+    );
+};
 
-export default Homepage
+export default Homepage;
