@@ -4,6 +4,7 @@ import { useState } from "react";
 import { getUser } from "./utilities/users-service";
 import AuthPage from "./pages/AuthPage.jsx";
 import Navbar from "./components/Navbar";
+import Homepage from "./pages/Homepage.jsx";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <>
           <Navbar user={user} setUser={setUser} />
           hi
+          <Homepage />
         
           {/* <Routes>
             <Route path="/homepage" element={<CitySearch user={user} setUser={setUser} />} />
