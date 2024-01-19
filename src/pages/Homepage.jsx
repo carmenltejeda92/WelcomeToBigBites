@@ -40,9 +40,9 @@ const Homepage = () => {
                 <button type="submit">Search</button>
             </form>
             
-            <div>
+            <div >
                 {data.map((result) => (
-                    <div key={result.key}>
+                    <div id="list" key={result.key}>
                         <div>Author Name: {result.name}</div>
                         <button onClick={() => handleSelectAuthor(result.key)}>Select</button>
                     </div>
@@ -51,7 +51,7 @@ const Homepage = () => {
 
             {selectedAuthor && (
                 <div>
-                    <img key={selectedAuthor.key}
+                    <img id="authorpic" key={selectedAuthor.key}
                         alt={selectedAuthor.name}
                         src={`http://covers.openlibrary.org/a/id/${selectedAuthor.photos[0]}.jpg`} />
                     <div>Author Name: {selectedAuthor.personal_name}</div>
