@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 const Homepage = () => {
     const [searchAuthor, setSearchAuthor] = useState('');
     const [data, setData] = useState([]);
+    const [selectedAuthor, setSelectedAuthor] = useState(null);
 
     const handleSearch = (e) => {
         e.preventDefault(); 
@@ -13,8 +14,19 @@ const Homepage = () => {
                 setData(result.docs);
                 console.log(result.docs);
             })
-            .catch((error) => console.error('Sorry, problem getting data', error));
+            .catch((error) => console.error(`Sorry, can't get data`, error));
     };
+
+    const handleSelectAuthor = (authorKey) => {
+        fetch(`http://openlibrary.org/authors/${authorKey}.json`)
+            .then((response) => response.json())
+            .then((result) => {
+                setSelectedAuthor(result);
+                console.log(result);
+            })
+            .catch((error) => console.error(`Can't get author details:`, error));
+    };
+
 
     return (
         <div>
@@ -28,11 +40,25 @@ const Homepage = () => {
                 <button type="submit">Search</button>
             </form>
             
-            {data.map((result) => (
-                <div key={result.key}>
-                    <div>Author Name: {result.name}</div>
+            <div>
+                {data.map((result) => (
+                    <div key={result.key}>
+                        <div>Author Name: {result.name}</div>
+                        <button onClick={() => handleSelectAuthor(result.key)}>Select</button>
+                    </div>
+                ))}
+            </div>
+
+            {selectedAuthor && (
+                <div>
+                    <img key={selectedAuthor.key}
+                        alt={selectedAuthor.name}
+                        src={`http://covers.openlibrary.org/a/id/${selectedAuthor.photos[0]}.jpg`} />
+                    <div>Author Name: {selectedAuthor.personal_name}</div>
+                    <div>Bio: {selectedAuthor.bio}</div>
+                    <div>{selectedAuthor.birth_date} - {selectedAuthor.death_date}</div>
                 </div>
-            ))}
+            )}
         </div>
     );
 };
