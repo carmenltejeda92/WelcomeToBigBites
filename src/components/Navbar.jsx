@@ -20,9 +20,9 @@ function Navbar({user ,setUser}) {
         <Link to="" onClick={handleLogOut}><button>Log-Out</button></Link>
       </div>
 
-        <Link to="/orders">Order History</Link>
+        <Link to="/city">City Search</Link>
 
-        <Link to="/orders/new">New Order</Link>
+        <Link to="/orders/new">yubbababba</Link>
       </nav>
     </>
   );
