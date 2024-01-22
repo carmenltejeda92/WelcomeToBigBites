@@ -19,10 +19,6 @@ function Navbar({user ,setUser}) {
         <p style={{margin:'1em'}}> Logged In : {user.email}</p>
         <Link to="" onClick={handleLogOut}><button>Log-Out</button></Link>
       </div>
-
-        <Link to="/city">City Search</Link>
-
-        <Link to="/orders/new">yubbababba</Link>
       </nav>
     </>
   );

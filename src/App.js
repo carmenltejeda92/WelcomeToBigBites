@@ -16,12 +16,7 @@ function App() {
       {user ? (
         <>
           <Navbar user={user} setUser={setUser} />
-          hi
           <Homepage />
-        
-          {/* <Routes>
-            <Route path="/homepage" element={<CitySearch user={user} setUser={setUser} />} />
-          </Routes> */}
         </>
       ) : (
         <AuthPage user={user} setUser={setUser}/>
