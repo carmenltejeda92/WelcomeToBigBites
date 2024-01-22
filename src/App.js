@@ -2,9 +2,9 @@ import "./App.css";
 import { useState } from "react";
 // import { Routes, Route } from "react-router-dom";
 import { getUser } from "./utilities/users-service";
-import AuthPage from "./pages/AuthPage.jsx";
+import AuthPage from "./pages/AuthPage/AuthPage.jsx";
 import Navbar from "./components/Navbar";
-import Homepage from "./pages/Homepage.jsx";
+import Homepage from "./pages/Homepage/Homepage.jsx";
 
 
 function App() {
