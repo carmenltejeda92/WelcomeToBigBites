@@ -1,5 +1,5 @@
 body{
-    background-image: url('https://images.unsplash.com/photo-1495145910046-717b12bffcf7?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-image: url('https://images.unsplash.com/photo-1495145910046-717b12bffcf7?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') !important;
     background-repeat: no-repeat;
     background-size: cover;
     font-family: 'Times New Roman', Times, serif;
@@ -8,12 +8,9 @@ body{
 }
 
 .main{
-    
-}
-
-.form-container{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    margin-top: 10%;
 }
 
 .img{
