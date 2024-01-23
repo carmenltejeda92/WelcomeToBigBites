@@ -1,11 +1,11 @@
-### Welcome to Big Bites Dogs
+# Welcome to Big Bites Dogs
 
 The purpose of this project is to demonstrate a login and sign up form that connects to a Mongo database that will store the users that are accessing the website. This app will test if the user input matches stored information in the database, and if not, it will return an error for the user to sign up. Otherwise, once logged in, users will be able to render dog pictures with the click of a button. 
 
-# To use this app
+## To use this app
 Simply sign up with any email and password (no restrictions on length, characters, or upper/lowercase letters). If already signed up, simply login using original email and password. Once logged in, a cute picture of a puppy will render but to see another, simply click the "See another puppy!" button to display another. 
 
-# Issues faced
+## Issues faced
 
 1. Repeatedly getting an error stating the async function process was not defined.  To resolve this issue, the useEffect hook needed refactored to use models within the same file instead of importing form an external file/folder.
 
@@ -14,7 +14,7 @@ Simply sign up with any email and password (no restrictions on length, character
 3. Displaying the object received from the API call was not displaying the contents on screen, however, data was appearing in the console. To resolve this issue, an empty object inside an empty array was used inside the useState hook as a default parameter to begin so the data has a storage space on render.
 
 
-# Credits
+## Credits
 
 1. Jordan Wofford 
 2. Kit Danovsky
