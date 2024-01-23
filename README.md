@@ -1,4 +1,4 @@
-## Welcome to Big Bites Dogs
+### Welcome to Big Bites Dogs
 
 The purpose of this project is to demonstrate a login and sign up form that connects to a Mongo database that will store the users that are accessing the website. This app will test if the user input matches stored information in the database, and if not, it will return an error for the user to sign up. Otherwise, once logged in, users will be able to render dog pictures with the click of a button. 
 
